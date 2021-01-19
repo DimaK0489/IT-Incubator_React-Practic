@@ -1,44 +1,39 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Accordion} from "./components/accordion/Accordion";
-import {Rating} from "./components/Rating/Raiting";
+import {Rating, RatingValueType} from "./components/Rating/Raiting";
 import {OnOff} from "./components/OnOff/OnOff";
-import {UncontrolledAccordion} from "./components/UncontroledAccordion/Accordion";
-import {UncontrolledRating} from "./components/UncontroledRating/Raiting";
+import {UncontrolledAccordion} from "./components/UncontroledAccordion/UncontroledAccordion";
+import {UncontrolledRating} from "./components/UncontroledRating/UncontroledRaiting";
 
 
 export function App() {
     console.log("App rendering")
+
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(4)
     return (
         <div className="App">
             <PageTitle title={"This is App component"}/>
             <PageTitle title={"My friends"}/>
 
-            <UncontrolledRating />
-
-            <UncontrolledAccordion titleValue={"Menu"} />
-            <UncontrolledAccordion titleValue={"Users"} />
-
-            {/*<Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>*/}
-            <OnOff />
-
-            
+            <UncontrolledRating/>
+            <UncontrolledAccordion titleValue={"Menu"}/>
+            <UncontrolledAccordion titleValue={"Users"}/>
+            <OnOff/>
+            <div className={"components"}>
+                <Rating value={ratingValue}
+                        onClick={setRatingValue}/>
+            </div>
         </div>
     );
 }
 
-type PageTitlePropsType={
+type PageTitlePropsType = {
     title: string
 }
 
-function PageTitle(props:PageTitlePropsType){
+function PageTitle(props: PageTitlePropsType) {
     console.log("AppTitle rendering")
-    return(
+    return (
         <h2>{props.title}</h2>
     );
 }
