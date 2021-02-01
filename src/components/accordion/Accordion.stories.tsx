@@ -20,8 +20,8 @@ MenuCollapsedMode.args = {
     collapsed: true,
     onChange: callback
 };
-export const UsersUncollapsedMode = Template.bind({});
-UsersUncollapsedMode.args = {
+export const UsersUnCollapsedMode = Template.bind({});
+UsersUnCollapsedMode.args = {
     titleValue: "Users",
     collapsed: false,
     onChange: callback
