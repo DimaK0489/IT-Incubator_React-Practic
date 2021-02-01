@@ -1,13 +1,11 @@
 import React, {useState} from "react";
 
-type OnOffProps={
+export type OnOffProps={
     on: boolean
     onChange: (on:boolean) => void
 }
 
 export function OnOff(props:OnOffProps) {
-
-
     const onStyle = {
         width: "30px",
         height: "20px",
@@ -34,7 +32,6 @@ export function OnOff(props:OnOffProps) {
         marginLeft: "5px",
         backgroundColor: props.on ? "green" : "red"
     }
-
     return (
         <div>
             <div style={onStyle} onClick={ () => {props.onChange(true)} }>On</div>
@@ -42,5 +39,4 @@ export function OnOff(props:OnOffProps) {
             <div style={indicatorStyle}>  </div>
         </div>
     );
-
 }
