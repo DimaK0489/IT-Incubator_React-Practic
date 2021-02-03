@@ -30,6 +30,7 @@ export function App() {
                 <Accordion titleValue={"Menu"}
                            collapsed={accordionCollapsed}
                            onChange={ ()=> {setAccordionCollapsed(!accordionCollapsed)}}
+
                 />
                 <OnOff on={switchOn}
                        onChange= { setSwitchOn }
