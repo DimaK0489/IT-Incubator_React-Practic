@@ -8,7 +8,7 @@ export type AccordionPropsType = {
     titleValue: string
     collapsed: boolean
     onChange: () => void
-    items: Array<ItemType>
+    items: ItemType[]
     onClick: (value: any) => void
 }
 

@@ -7,6 +7,7 @@ import {UncontrolledRating} from "./components/UncontroledRating/UncontroledRait
 import {Accordion, ItemType} from "./components/accordion/Accordion";
 
 
+
 export function App() {
     console.log("App rendering")
 
@@ -30,8 +31,8 @@ export function App() {
                 <Accordion titleValue={"Menu"}
                            collapsed={accordionCollapsed}
                            onChange={ ()=> {setAccordionCollapsed(!accordionCollapsed)}}
-                           items={items}
-                           onClick={}
+                           items={[]}
+                           onClick={()=>{}}
                 />
                 <OnOff on={switchOn}
                        onChange= { setSwitchOn }
