@@ -20,8 +20,8 @@ export const Example1 = () => {
         setUsers(newUsers)
     }
     return <>
-        <button onClick={ () => setCounter((counter+1))}>+</button>
-        <button onClick={ addUser}>add user
+        <button onClick={ () => setCounter((counter+1)) }>+</button>
+        <button onClick={ addUser }>add user
         </button>
         <NewMessagesCounter count={counter}/>
         <Users users={users}/>

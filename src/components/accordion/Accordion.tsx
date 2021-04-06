@@ -12,15 +12,17 @@ export type AccordionPropsType = {
     onClick: (value: any) => void
 }
 
+
 export function Accordion(props: AccordionPropsType) {
-    console.log("Accordion rendering")
     return (
         <div>
             <AccordionTitle title={props.titleValue}
                             onChange={props.onChange}
             />
-            {!props.collapsed && <AccordionBody items={props.items}
-                                                onClick={props.onClick}/>} {/*если не свернут (если не collapsed) тогда покажи AccordionBody*/}
+            {!props.collapsed && <AccordionBody
+                items={props.items}
+                onClick={props.onClick}/>} {/*если не свернут (если не collapsed) тогда покажи AccordionBody*/}
+
         </div>
     );
 }
@@ -31,9 +33,10 @@ export type AccordionTitlePropsType = {
 }
 
 export function AccordionTitle(props: AccordionTitlePropsType) {
-    console.log("AccordionTitle rendering")
     return (
-        <h3 onClick={(e) => props.onChange()}>---{props.title}---</h3>
+        <>
+            <h3 onClick={(e) => props.onChange()}>---{props.title}---</h3>
+        </>
     );
 }
 
@@ -43,11 +46,14 @@ export type AccordionBodyPropsType = {
 }
 
 export function AccordionBody(props: AccordionBodyPropsType) {
-    console.log("AccordionBody rendering")
     const items = props.items.map((i, index) => <li onClick={() => {
         props.onClick(i.value)
     }} key={index}>{i.title}</li>)
     return (
+        <>
         <ul>{items}</ul>
+        </>
     );
 }
+
+
