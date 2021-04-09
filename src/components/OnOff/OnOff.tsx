@@ -32,7 +32,9 @@ export function OnOff(props:OnOffProps) {
         marginLeft: "5px",
         backgroundColor: props.on ? "green" : "red"
     }
+
     return (
+        // @ts-ignore
         <div>
             <div style={onStyle} onClick={ () => {props.onChange(true)} }>On</div>
             <div style={offStyle} onClick={ () => {props.onChange(false)} }>Off</div>
